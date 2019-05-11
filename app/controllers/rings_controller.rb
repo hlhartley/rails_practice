@@ -4,5 +4,6 @@ class RingsController < ApplicationController
     end
 
     def show
+        @ring = Ring.find(params["id"])
     end
 end
