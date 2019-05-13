@@ -13,6 +13,12 @@ class Ring < ApplicationRecord
 
     # Here self refers to the Ring class
     def self.average_price
+        # NOTE: Ruby symbol (:price) vs string ("price") --> 
+        # the colon before price refers to a Ruby symbol
+        # It is a string, but it a reserved space in memory.
+        # It is also immutable.
+        # we do this, because we end up using price over and over again,
+        # so no need to use a new chunk in memory for each of these "price" strings
         Ring.average(:price)
     end
 
